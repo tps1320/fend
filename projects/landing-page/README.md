@@ -1,13 +1,12 @@
 # Landing Page Project
+---
+## Description
 
-## Table of Contents
+With the starter project provided as base, new functionality has been added according to requirements specified in landing page project rubric.
 
-* [Instructions](#instructions)
-
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+* added additional section in addition to already provided 3 sections in base project
+* added dynamic navigation link
+* added functionality to highlight section when clicked on nav-link item
+* added functionality to highlight nav-link item when a section is scrolled to
+* update readme.md
+* made some minor style changes
