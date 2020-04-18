@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-displayData = [];
+projectData = [];
 
 // Require Express to run server and routes
 const express = require('express');
@@ -27,8 +27,8 @@ function isServerActive() {
 // handles get calls from client
 app.get('/getWeather', getWeatherInfo);
 function getWeatherInfo(request, response) {
-    console.log(displayData)
-    response.send(displayData);
+    console.log(projectData)
+    response.send(projectData);
 };
 // handles post calls from client, stores the information from client to server
 app.post('/saveWeather', saveWeatherInfo);
@@ -38,7 +38,7 @@ function saveWeatherInfo(request, response) {
         temp: request.body.temp,
         content: request.body.content
     };
-    displayData.push(userEntry);
-    response.send(displayData);
-    console.log(displayData);
+    projectData.push(userEntry);
+    response.send(projectData);
+    console.log(projectData);
 }
