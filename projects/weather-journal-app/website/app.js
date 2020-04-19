@@ -15,8 +15,10 @@ function generate(e) {
     const content = document.getElementById('feelings').value;
     callWeatherApiInfo(zipCode).then(function(apiData) {
         console.log(apiData);
-        sendWeatherInfo('/saveWeather', {temp: apiData.main.temp, date:newDate, content: content})
-    }).then(displayWeatherInfo('/getWeather'));
+        return sendWeatherInfo('/saveWeather', {temp: apiData.main.temp, date:newDate, content: content});
+    }).then(function(){
+        displayWeatherInfo('/getWeather');
+    });   
 }
 
 const callWeatherApiInfo = async(zip) =>{
@@ -57,9 +59,10 @@ const displayWeatherInfo = async (url) => {
     try{
         const serverData = await request.json();
         console.log(serverData);
-        document.getElementById('date').innerHTML = 'Date: ' + serverData[0].date;
-        document.getElementById('temp').innerHTML = 'Temp (Fahrenheit): ' + serverData[0].temp;
-        document.getElementById('content').innerHTML = 'Feelings: ' + serverData[0].content;
+        const data = serverData[serverData.length-1];
+        document.getElementById('date').innerHTML = 'Date: ' + data.date;
+        document.getElementById('temp').innerHTML = 'Temp (Fahrenheit): ' +data.temp;
+        document.getElementById('content').innerHTML = 'Feelings: ' + data.content;
     } catch(error) {
         console.log("error", error);
     }
