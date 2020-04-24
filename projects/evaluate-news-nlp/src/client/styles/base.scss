@@ -29,3 +29,22 @@ main {
 .format-results {
     color: #f00;
 }
+// Referred: https://www.w3schools.com/css/css3_animations.asp
+#spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-left: 16px solid #ff0;
+    border-top: 16px solid #00f;
+    border-right: 16px solid #0f0;
+    border-bottom: 16px solid #f00;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite; //animation-name, animation-duration, animation-timing-function, animation-iteration-count
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

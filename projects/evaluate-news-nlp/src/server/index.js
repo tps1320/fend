@@ -20,7 +20,6 @@ app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
 // designates what port the app will listen to for incoming requests
@@ -28,7 +27,7 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
 })
 
-//POST request
+//called when user input is text
 app.post('/analyze-text', function (req, res){
   textapi.sentiment({
       text: req.body.userInput,
@@ -43,7 +42,7 @@ app.post('/analyze-text', function (req, res){
         }
     });
 });
-
+// called when user input is url
 app.post('/analyze-url', function (req, res){
   textapi.sentiment({
       url: req.body.userInput,

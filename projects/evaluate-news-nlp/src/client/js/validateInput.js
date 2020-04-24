@@ -1,3 +1,4 @@
+// checks if user input is valid url
 function isValidUrl(urlString) {
     //Referred https://stackoverflow.com/a/43467144
     let url = '';
@@ -8,9 +9,9 @@ function isValidUrl(urlString) {
       }
       return url.protocol === "http:" || url.protocol === "https:";
 }
-
+// checks if user input has only alphabets and spaces
 function isValidText(text) {
-    const pattern = /^[A-Za-z]+$/; // just accepts alphabets
+    const pattern = /^[A-Za-z ]+$/; // just accepts alphabets and spaces
     return pattern.test(text);
 }
 
