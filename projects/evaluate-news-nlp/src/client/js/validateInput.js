@@ -15,5 +15,5 @@ function isValidText(text) {
     return pattern.test(text);
 }
 
-export{ isValidUrl }
-export{ isValidText }
+export { isValidUrl }
+export { isValidText }
